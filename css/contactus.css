@@ -1,0 +1,49 @@
+.box3{
+    margin-left: 500px;
+    padding-top: 20px;
+}
+:root {
+    --bg: black;
+    --head:peachpuff;
+    
+  }
+.tb1{
+    margin: 50px auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 30px;
+    margin-left: 350px;
+    width: 600px;
+
+}
+td{
+    width: 100px;
+}
+.btn{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 50px 0 50px;
+    border: 1px solid var(--bg);
+    width: 130px;
+    background-color: peachpuff;
+ }
+ .btn:hover{  
+    cursor: pointer;
+    background-color: var(--head);
+    color: black;
+ }
+ 
+ .cont{
+    border: solid gray;
+	margin-top: 70px;
+	margin-left: 250px;
+	width: 800px;
+	height: 300px;
+    border-radius: 7px;
+	border-width: 1px;
+    padding: 20px;
+    font-size: large;
+    font-family: 'Courier New';
+     
+ }
+ 
