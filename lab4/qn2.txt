@@ -1,0 +1,17 @@
+var List = ["Banana", "Apple", "Orange", "Blueberries"];
+List.shift();
+'Banana'
+List
+(3) ['Apple', 'Orange', 'Blueberries']
+List.sort();
+(3) ['Apple', 'Blueberries', 'Orange']
+List.push("Kiwi");
+4
+List
+(4) ['Apple', 'Blueberries', 'Orange', 'Kiwi']
+List.shift();
+'Apple'
+List
+(3) ['Blueberries', 'Orange', 'Kiwi']
+List.reverse();
+(3) ['Kiwi', 'Orange', 'Blueberries']

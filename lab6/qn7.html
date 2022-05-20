@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Supply</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'century gothic';
+        font-size: medium;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+        padding: 20px;
+
+    }
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 400px;
+        height: 250px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+
+    }
+
+    input[type=button] {
+        width: 100px;
+        padding: 8px;
+        font-size: small;
+        margin-left: 120px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    .box {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+
+    textarea {
+        width: 350px;
+        padding: 8px 15px;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-top: 20px;
+
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="box">
+                <div class="children">
+                    <h5 style="margin: 20px; margin-left: 70px;">JS program to get the object</h5>
+                    <input type="button" id="print" value="Print" onclick="print()">
+                    <textarea id="result" placeholder="Result"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='home.html'>Back</a></button>
+    </div>
+    <script>
+        var enter = document.getElementById("print")
+        var result = document.getElementById("result")
+
+            let obj = {
+                my: 'name',
+                is: 'Rudolf',
+                the: 'raindeer'
+            }
+
+            function print() {
+                result.value = `my ${obj.my} is ${obj.is} the ${obj.the}`;
+            }
+    </script>
+
+</body>
+
+</html>

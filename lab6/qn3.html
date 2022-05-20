@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age validation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<style>
+
+    .container {
+        width: 350px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;  
+        border-radius: 10px;
+        background-color: #9cc09c;
+
+    }
+
+    input[type=button] {
+        width: 100px;
+        padding: 8px 20px;
+        margin-left: 50px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input {
+        width: 200px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    .children {
+        margin-left: 40px;
+        padding: 30px;
+        width: fit-content;
+        
+    }
+</style>
+
+<body>
+    <div class="main">
+    <div class="container">
+            <div class="children">
+                <h4 style="margin-bottom: 30px;">Age validation for Driving</h4>
+                <input type="number" id="age" placeholder="Enter your age..." required><br><br>
+                <input type="button" id="print" value="Validate">
+            </div>
+    </div>
+</div>
+    <div class="back">
+        <button class="btn"><a href='home.html'>Back</a></button>
+    </div>
+    <script>
+        var num = document.getElementById("age")
+        var enter = document.getElementById("print")
+
+        enter.addEventListener("click", function () {
+            if (num.value.length > 0) {
+                message = num.value >= 18 ? '--You can drive--' : '--You cannot drive--';
+                alert(message);
+                num.value = "";
+            }
+        })
+    </script>
+
+</body>
+
+</html>

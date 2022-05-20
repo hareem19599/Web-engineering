@@ -1,0 +1,20 @@
+.btn {
+    background-color: #4c588d;
+    padding: 8px;
+    width: 100px;
+    border: 1px solid #4c588d;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px #9cc0c2;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.back {
+    margin-left: 600px;
+    margin-top: 20px;
+    width: fit-content;
+    display: flex;
+
+}

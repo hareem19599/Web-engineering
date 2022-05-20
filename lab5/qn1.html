@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'century gothic';
+        
+    }
+    body{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .header {
+        background-color: teal;
+        padding: 30px 40px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    input {
+        width: 85%;
+        padding: 10px 15px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 3px 0px 0px 3px;
+        float: left;
+        font-size: 16px;
+    }
+
+    .addbtn {
+        padding: 10px;
+        width: 15%;
+        background-color: rgb(161, 197, 197);
+        color: black;
+        float: left;
+        border: 1px solid rgb(161, 197, 197);
+        margin: 8px 0;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0px 3px 3px 0px;
+    }
+
+    .addbtn:hover {
+        background-color: lavender;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 50px;
+        list-style-type: none;
+        background: #eee;
+        font-size: 18px;
+        transition: 0.2s;
+
+        /* make the list items unselectable */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    ul li:nth-child(odd) {
+        background: lavender;
+    }
+
+    ul li:hover {
+        background: rgb(161, 197, 197);
+    }
+
+    ul li.checked {
+        background: rgb(109, 156, 156);
+        color: #fff;
+        text-decoration: line-through;
+    }
+
+    ul li.checked::before {
+        content: '';
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 10px;
+        left: 16px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 7px;
+    }
+
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+    }
+
+    .close:hover {
+        background-color: lavender;
+        color: black;
+    }
+    .container{
+        width: 600px;
+        height: auto;
+        margin-left: 370px;
+        margin-top: 90px;
+    }
+</style>
+
+<body>
+    <div class="main">
+    <div class="container">
+        <div class="header">
+            <h1 style="color: white;">To Do List</h1>
+            <input type="text" placeholder="Title.." id="input">
+            <span onclick="newitem()" class="addbtn">Add</span>
+        </div>
+        <ul id="list">
+            <li class="checked">workout</li>
+            <li>Assignments</li>
+            <li>Web quiz</li>
+            <li>oels</li>
+        </ul>
+    </div>
+</div>
+    <div class="back">
+        <button class="btn"><a href='home1.html'>Back</a></button>
+    </div>
+    
+    <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function (ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newitem() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("input").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("Enter something!");
+            } else {
+                document.getElementById("list").appendChild(li);
+            }
+            document.getElementById("input").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

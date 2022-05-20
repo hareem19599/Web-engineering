@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array sum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<style>
+    input[type=button] {
+        width: 80px;
+        padding: 8px 20px;
+        margin-left: px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input {
+        width: 200px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    textarea {
+        width: 200px;
+        height: 150px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 350px;
+        height: 400px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+    }
+
+    .children {
+        width: fit-content;
+        margin: 10px;
+        margin-left: 45px;
+    }
+
+    h4,
+    p {
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="box">
+                <h4>Finding the array from target value</h4>
+                <p style="margin-left: 50px;">following is the array.<br>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+                <div class="children">
+                    <input type="number" id="target" placeholder="Enter Target value..." required><br><br>
+                    <input type="button" id="print" value="Print">
+                    <input type="button" id="reset" value="Reset" style="margin-left: 33px;"><br><br>
+                    <textarea id="result" placeholder="Result"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='home.html'>Back</a></button>
+    </div>
+    <script>
+        var num = document.getElementById("target")
+        var enter = document.getElementById("print")
+        var result = document.getElementById("result")
+        var reset = document.getElementById("reset")
+
+        enter.addEventListener("click", function () {
+            result.value = "";
+            if (num.value > 0 && num.value < 11) {
+                let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                for (let i = 0; i < array.length; i++) {
+                    for (let j = 0; j < array.length; j++) {
+                        var sum = array[i] + array[j];
+                        console.log(sum)
+                        if (sum == num.value) {
+                            var x = `[ ${array[i]} , ${array[j]} ] \n`
+                            result.value = result.value + x;
+                            console.log(x)
+                        }
+                    }
+                }
+            }
+            else if (num.value == 0 || num.value == 1) {
+                alert("0 and 1 can't have sum...\nTry again please..")
+                num.value = "";
+                result.value = "";
+            }
+            else {
+                alert("please enter target value less than 10!..")
+            }
+        })
+        reset.addEventListener("click", function () {
+            num.value = "";
+            result.value = "";
+        })
+    </script>
+
+</body>
+
+</html>

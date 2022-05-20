@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generate Sequence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: 'century gothic';
+        font-size: large;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        width: 600px;
+        height: 300px;
+        margin-top: 100px;
+        margin-left: 370px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+
+    }
+
+    input[type=button] {
+        width: 80px;
+        padding: 8px 20px;
+        margin: 5px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input[type=number] {
+        width: 200px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    .children {
+        margin-left: 190px;
+    }
+
+    textarea[type=number] {
+        width: 97%;
+        padding: 8px 20px;
+        margin: 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 2px;
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="children">
+                <h5 style="margin: 20px;">Generating Sequence</h5>
+                <input type="number" id="endvalue" placeholder="Enter limit for sequence..." required=""><br><br>
+                <input type="button" id="print" value="Print">
+                <input type="button" id="reset" value="Reset" style="margin-left: 33px;"><br><br>
+            </div>
+            <div>
+                <textarea type="number" id="result" placeholder="Sequence... "></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='qn3.html'>Back</a></button>
+    </div>
+    <script>
+        var end = document.getElementById("endvalue")
+        var enter = document.getElementById("print")
+        var result = document.getElementById("result")
+        var reset = document.getElementById("reset")
+
+        enter.addEventListener("click", function () {
+            if (end.value == "") {
+                alert("Incomplete input!..\n Try again please..")
+                end.value = "";
+                result.value = "";
+            }
+			else if (end.value > 0) {
+                for (var i = 0; i <= end.value; i++) {
+					console.log(i)
+					var x=`${i},`;
+                    result.value  = result.value+x;
+                    
+                }
+            
+            }
+            else {
+                alert("Invalid input!..")
+            }
+        })
+        reset.addEventListener("click", function () {
+            end.value = "";
+            result.value = "";
+        })
+    </script>
+
+</body>
+
+</html>

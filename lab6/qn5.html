@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Supply</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'century gothic';
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        margin: 100px;
+        padding: 20px;
+
+    }
+
+
+    .container {
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+
+    }
+
+    input[type=button] {
+        width: 200px;
+        padding: 8px 20px;
+        margin-left: px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input {
+        width: 200px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    .box {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="main">
+            <div class="container">
+                <div class="box">
+                    <div class="children">
+                        <h4 style="margin: 30px;">Calculate Supply</h4>
+                        <input type="number" id="age" placeholder="Enter your age..." required><br><br>
+                        <input type="number" id="amount" placeholder="Enter amount..." required><br><br>
+                        <input type="button" id="print" value="Calculate">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <button class="btn"><a href='home.html'>Back</a></button>
+        </div>
+
+    </main>
+    <script>
+        var num = document.getElementById("age")
+        var amount = document.getElementById("amount")
+        var enter = document.getElementById("print")
+
+        enter.addEventListener("click", function () {
+            if (num.value.length > 0 && amount.value.length > 0) {
+                consumed(num.value, amount.value);
+            }
+            age.value = '';
+            amount.value = '';
+        })
+        var consumed = (num, amount) => {
+            var maxage = 60;
+            var consume = maxage * 12 * 30 * amount;
+            var current = num * 12 * 30 * amount;
+            alert(`Hey!..\nYour Current Consumed Amount is ${current}.\nYou  need ${consume - current} to last you until the ripe old age of ${maxage}`)
+        }
+
+    </script>
+
+</body>
+
+</html>

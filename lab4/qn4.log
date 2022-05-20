@@ -1,0 +1,18 @@
+const obj={
+    username:"Hareem",
+    password:"12345"
+};
+const database = [obj];
+
+const newsfeed = [ { username:"fatima", 
+                    timeline:"1236491"},
+                  
+                  { username:"imama",
+                    timeline:"12373429"},
+                  
+                  { username:"ahmed",
+                    timeline:"1235t3281"} ];
+
+console.log("object : ", obj);
+console.log("database : ", database);
+console.log("newsfeed : ", newsfeed);

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<script>
+
+</script>
+<style>
+   
+    div{
+        border: 1px solid black;
+        border-radius: 4px;
+        width: fit-content;
+        margin: 100px;
+        padding: 30px;
+        font-family: 'century gothic';
+        margin-left: 32%;         
+    }
+  input[type=text] {
+  width: 50%;
+  padding: 8px 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid darkcyan;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.btn1{
+  width: 30%;
+  padding: 8px 15px;
+  margin: 7px 0;
+  border: 1px solid darkcyan;
+  background-color:  darkcyan ;
+  color: white;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+</style>
+<body>
+        <div>
+            <center>
+                <h3>Calculating Volume of a Sphere</h3>
+                <p>Input radius value and get the volume of the Sphere</p>
+             </center>
+                <form action="" method="post" id="form1"></form>
+                <label>Radius</label><br>
+                <input type="text" class="input" name="radius" id="radius"><br>
+                <label>Volume</label><br>
+                <input type="text" class="input" name="volume" id="volume"><br>
+                <button type="submit" class="btn1" id="calculate" >Calculate</button>
+         </form>
+         </div>
+         <div class="back">
+            <button class="btn"><a href='home1.html'>Back</a></button>
+        </div>
+    <script>
+        function calculateVolume(){
+        var radius = document.getElementById("radius").value;
+        var volume = (4/3)* Math.PI * Math.pow(radius, 3);
+        document.getElementById("volume").value = volume.toFixed(4);
+        return false;
+    }
+    let button=document.getElementById("calculate");
+    button.onclick=calculateVolume;
+    </script>
+</body>
+</html>

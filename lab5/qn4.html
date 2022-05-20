@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        
+    }
+    .box {
+
+        width: 100px;
+        height: 100px;
+    }
+
+    .container {
+        padding-left: 350px;
+        padding-top: 100px;
+        display: flex;
+        height: 400px;
+        flex-wrap: wrap;
+    }
+
+    #h {
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    #m {
+        border-radius: 0px 15px 15px 0px;
+    }
+
+    h1 {
+        color: white;
+        padding-left: 35px;
+        padding-top: 10px;
+    }
+
+    .btn {
+        background-color: #4c588d;
+        padding: 8px;
+        width: 100px;
+        border: 1px solid #4c588d;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px #9cc0c2;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .back {
+        margin-left: 600px;
+        margin-top: 20px;
+        width: fit-content;
+        display: flex;
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box" style="background-color: orange;" onmouseover="colorchangeorange()" onmouseout="backcolor()"
+            id="h">
+            <H1>H</H1>
+        </div>
+        <div class="box" style="background-color: salmon;" onmouseover="colorchangesalmon()" onmouseout="backcolor()">
+            <H1>A</H1>
+        </div>
+        <div class="box" style="background-color: aquamarine" onmouseover="colorchangeaquamarine()" onmouseout="backcolor()">
+            <h1>R</h1>
+        </div>
+        <div class="box" style="background-color: lightskyblue;" onmouseover="colorchangeblue()"
+            onmouseout="backcolor()">
+            <H1>E</H1>
+        </div>
+        <div class="box" style="background-color: plum" onmouseover="colorchangeplum()" onmouseout="backcolor()">
+            <h1>E</h1>
+        </div>
+        <div class="box" style="background-color: #679267" onmouseover="colorchangegreen()" onmouseout="backcolor()"
+            id="m">
+            <h1>M</h1>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='home1.html'>Back</a></button>
+    </div>
+
+
+    <script>
+        var colour = document.getElementsByClassName("container")[0]
+        function colorchangeorange() {
+            colour.style.background = "orange";
+        }
+        function colorchangesalmon() {
+            colour.style.background = "salmon";
+        }
+        function colorchangeaquamarine() {
+            colour.style.background = "aquamarine";
+        }
+        function colorchangeblue() {
+            colour.style.background = "lightskyblue";
+        }
+        function colorchangeplum() {
+            colour.style.background = "plum";
+        }
+        function colorchangegreen() {
+            colour.style.background = "#679267";
+        }
+        function backcolor() {
+            colour.style.background = "rgb(199, 224, 216)";
+        }
+    </script>
+</body>
+
+</html>

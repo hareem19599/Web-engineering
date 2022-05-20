@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gen power</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: 'century gothic';
+        font-size: large;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        width: 400px;
+        height: 300px;
+        margin-top: 100px;
+        margin-left: 450px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+
+    }
+
+    input[type=button]{
+        width: 80px;
+        padding: 8px 20px;
+        margin-left: px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input {
+        width: 200px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    .children {
+        margin-left: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="children">
+                <h5 style="margin: 20px;">Generating power</h5>
+                <input type="number" id="base" placeholder="Enter base value..." required><br><br>
+                <input type="number" id="power" placeholder="Enter power..." required><br><br>
+                <input type="button" id="print" value="Print">
+                <input type="button" id="reset" value="Reset" style="margin-left: 33px;"><br><br>
+                <input type="number" id="result" placeholder="Result ">
+            </div>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='qn3.html'>Back</a></button>
+    </div>
+    <script>
+        var num = document.getElementById("base")
+        var power = document.getElementById("power")
+        var enter = document.getElementById("print")
+        var result = document.getElementById("result")
+        var reset = document.getElementById("reset")
+
+        enter.addEventListener("click", function () {
+            if (num.value > 0 && power.value > 0) {
+                result.value = (Math.pow(num.value, power.value));
+                
+            }
+            else if (num.value == 0 && power > 0) {
+                alert("Base cannot be 0...\n Try again please..")
+                num.value = "";
+                power.value = "";
+                result.value = "";
+            }
+            else if (num.value > 0 && power.value == 0) {
+                result.value = "1";
+                
+            }
+            else if (num.value == "" && power.value == "") {
+                alert("incomplete input!..\n Try again please..")
+                num.value = "";
+                power.value = "";
+                result.value = "";
+            }
+            else {
+                alert("Invalid input!..")
+            }
+        })
+        reset.addEventListener("click", function () {
+            num.value = "";
+            power.value = "";
+            result.value = "";
+        })
+    </script>
+
+</body>
+
+</html>

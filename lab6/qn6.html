@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Supply</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'century gothic';
+        font-size: medium;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+        padding: 20px;
+
+    }
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 410px;
+        height: 340px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+
+    }
+
+    input[type=button] {
+        width: 100px;
+        padding: 8px;
+        font-size: small;
+        margin-left: 15px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    .box {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+
+    textarea {
+        width: 350px;
+        height: 130px;
+        padding: 8px 15px;
+        margin-left: 10px;;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-top: 20px;
+
+    }
+</style>
+
+<body>
+    <main>
+        <div class="main">
+            <div class="container">
+                <div class="box">
+                    <div class="children">
+                        <h3 style="margin: 40px; margin-left: 50px;">Information on my Favorite Recipe</h3 >
+                        <input type="button" id="print" value="White S P" onclick="wsp()">
+                        <input type="button" id="print" value="Coffee" onclick="Coffee()">
+                        <input type="button" id="print" value="Cutlets" onclick="Cutlets()">
+                        <textarea id="recipe" placeholder="recipe" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <button class="btn"><a href='home.html'>Back</a></button>
+        </div>
+    
+    </main>
+    <script>
+        var print = document.getElementById("print")
+        var result = document.getElementById("recipe")
+        var whitesp = {
+            title: "White Sauce Pasta",
+            servings: 2,
+            ingredients: ["Pasta", "Butter", "Water", "Milk", "All purpose flour", "Black pepper", "Salt"],
+            details: function () {
+                console.log("Title: " + this.title)
+                console.log("Serve: " + this.servings)
+                console.log("Ingredients: " + this.ingredients)
+                return "Title              :  " + this.title + "\nServings       : " + this.servings + "\nIngredients  :  " + this.ingredients;
+            }
+        };
+        var coffee = {
+            title: "Coffee",
+            servings: 1,
+            ingredients: ["Coffee", "sugar", "Milk"],
+            details: function () {
+                console.log("Title: " + this.title)
+                console.log("Serve: " + this.servings)
+                console.log("Ingredients: " + this.ingredients)
+                return "Title              :  " + this.title + "\nServings       : " + this.servings + "\nIngredients  :  " + this.ingredients;
+            }
+        };
+        var cut = {
+            title: "Cutlets",
+            servings: 2,
+            ingredients: ["Boiled Potatoes", "Chilli flakes", "Milk", "All purpose flour", "Black pepper", "Salt", "Cheese (optional)"],
+            details: function () {
+                console.log("Title: " + this.title)
+                console.log("Serve: " + this.servings)
+                console.log("Ingredients: " + this.ingredients)
+                return "Title              :  " + this.title + "\nServings       : " + this.servings + "\nIngredients  :  " + this.ingredients;
+            }
+        };
+        function wsp() {
+            result.value = whitesp.details();
+        }
+        function Coffee() {
+            result.value = coffee.details();
+        }
+
+        function Cutlets() {
+            result.value = cut.details();
+        }
+
+
+    </script>
+
+</body>
+
+</html>

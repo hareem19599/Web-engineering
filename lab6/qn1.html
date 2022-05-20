@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gen power</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<style>
+
+    .container {
+        width: 340px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;  
+        border-radius: 10px;
+        background-color: #9cc09c;
+
+    }
+
+    input[type=button] {
+        width: 100px;
+        padding: 8px 20px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input {
+        width: 238px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    .children {
+        margin-left: 50px;
+        width: fit-content;
+    }
+</style>
+
+<body>
+    <div class="main">
+    <div class="container">
+            <div class="children">
+                <h5 style="margin: 30px;">Generating power of 100</h5>
+                <input type="number" id="base" placeholder="Enter base value..." required><br><br>
+                <input type="button" id="calculate" value="Calculate">
+                <input type="button" id="reset" value="Reset" style="margin-left: 33px;"><br><br>
+                <input type="number" id="result" placeholder="Result ">
+            </div>
+    </div>
+</div>
+    <div class="back">
+        <button class="btn"><a href='home.html'>Back</a></button>
+    </div>
+    <script>
+        var num = document.getElementById("base")
+        var enter = document.getElementById("calculate")
+        var result = document.getElementById("result")
+        var reset = document.getElementById("reset")
+
+        enter.addEventListener("click", function () {
+            if (num.value > 0) {
+                result.value = (Math.pow(num.value, 100));
+
+            }
+            else if(num.value == 0) {
+                alert("Base cannot be 0...\n Try again please..")
+                num.value = "";
+                result.value = "";
+            }
+        })
+        reset.addEventListener("click", function () {
+            num.value = "";
+            result.value = "";
+        })
+    </script>
+
+</body>
+
+</html>

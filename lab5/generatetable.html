@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: 'century gothic';
+        font-size: large;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        width: 400px;
+        height: 400px;
+        margin-top: 50px;
+        margin-left: 450px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+        
+    }
+    .children {
+        margin-left: 100px;
+    }
+
+
+    input[type=button]{
+        width: 80px;
+        padding: 8px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+    
+
+    input {
+        width: 200px;
+        padding: 8px 20px;
+        margin-top: 20px;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+    textarea[type=number] {
+        width: 95%;
+        height: 250px;
+        padding: 8px 20px;
+        margin: 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 2px;
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="children">
+                <input type="number" id="table"  placeholder="Enter a number...">
+                <input type="button" id="btn" value="print">
+                <input type="button" id="reset" value="Reset" style="margin-left: 33px;"><br><br>
+            </div>
+            <div>
+                <textarea type="number" id="result" placeholder="Sequence... "></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='qn3.html'>Back</a></button>
+    </div>
+    <script>
+        var num = document.getElementById("table")
+        var enter = document.getElementById("btn")
+        var result = document.getElementById("result")
+        var reset = document.getElementById("reset")
+        enter.addEventListener("click", function () {
+            if(num.value.length > 0){
+            if (num.value > 0) {
+                for (var i = 1; i <= 10; i++) {
+					console.log(i)
+					var x= num.value + " * " + i + " = " + num.value*i + "\n";
+                    result.value  = result.value + x;   
+                    
+                }
+            }
+          }   
+        })
+        reset.addEventListener("click", function () {
+            num.value = "";
+            result.value = "";
+        })
+    </script>
+
+</body>
+
+</html>

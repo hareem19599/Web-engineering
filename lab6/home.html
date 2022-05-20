@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Trirong">
+    <title>Lab 6 Javascript basics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'caveat';
+    }
+
+    body {
+        background-color: #d7dbef;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: fit-content;
+        margin: 50px;
+
+    }
+
+    button {
+        margin: 20px;
+        width: 200px;
+        height: 50px;
+        padding: 5px;
+        margin-top: 30px;
+        font-size: large;
+        border: 1px solid #2e8785;
+        background-color: #2e8785;
+        border-radius: 5px;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Trirong';
+        color: #2e2e41;
+        margin-top: 30px;
+        text-shadow: 4px 4px 4px #a0a4a7;
+        animation: animate 2s 1s forwards;
+        opacity: 0;
+    }
+
+    @keyframes animate {
+        from {
+            transform: translateX(-400px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div class="main">
+        <h1>LAB NO.6</h1>
+        <div class="container">
+            <button><a href='qn1.html'>Power of 100</a></button>
+            <button><a href='qn2.html'>Sum of target value</a></button>
+            <button><a href='qn3.html'>Age validation</a></button>
+            <button><a href='qn4.html'>Browser Cases</a></button>
+            <button><a href='qn5.html'>Calculate Supply</a></button>
+            <button><a href='qn6.html'>Favourite recipe</a></button>
+            <button><a href='qn7.html'>Javascript object</a></button>
+            <button><a href='qn8.html'>Form validation</a></button>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='main.html'>Back</a></button>
+    </div>
+</body>
+
+</html>

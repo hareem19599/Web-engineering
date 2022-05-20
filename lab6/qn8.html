@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Trirong">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<style>
+    input[type=submit] {
+        width: 100px;
+        padding: 8px 20px;
+        margin: 30px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input[type=reset] {
+        width: 100px;
+        padding: 8px 20px;
+        margin: 30px;
+        border: 1px solid #2e2e41;
+        background-color: #2e2e41;
+        border-radius: 5px;
+        color: white;
+        font-family: 'century gothic';
+        box-sizing: border-box;
+
+    }
+
+    input {
+        width: 250px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        background-color: rgb(238, 230, 230);
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 450px;
+        height: 400px;
+        border-radius: 10px;
+        background-color: #9cc09c;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        font-family: 'Caveat';
+
+
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="box">
+                <h1>Registration Form</h1>
+                <form method="post">
+                    <center>
+                        <table cellpadding="3">
+                            <tr>
+                                <td>Full Name </td>
+                                <td><input type="text" name="fname" required id="name"></td>
+                            </tr>
+                            <tr>
+                                <td>Email Address</td>
+                                <td colspan="2"><input type="email" required placeholder="example@email.com" id="email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td><input type="number" maxlength="11" id="phone" required pattern="[0-9]{4}[0-9]{7}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td colspan="2"><input type="password" required placeholder="*******" id="password">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Confirm Password</td>
+                                <td colspan="2"><input type="password" required placeholder="*******" id="conpassword">
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="submit" id="register" value="Register">
+                        <input type="reset" id="reset" value="Reset" style="margin-left: 20px;">
+
+            </div>
+        </div>
+    </div>
+    <div class="back">
+        <button class="btn"><a href='home.html'>Back</a></button>
+    </div>
+    <script>
+        var name = document.getElementById("name")
+        var email = document.getElementById("email")
+        var phone = document.getElementById("phone")
+        var pass = document.getElementById("password")
+        var conpass = document.getElementById("conpassword")
+        var enter = document.getElementById("register")
+        var reset = document.getElementById("reset")
+
+        enter.addEventListener("click", function () {
+            if (phone.value.length > 11) {
+                phone.setCustomValidity("phone number should not be greater than 10 digits")
+            }
+            if (email.value === '') {
+                email.setCustomValidity("Invalid E-mail address!");
+            }
+            if (pass.value == conpass.value) {
+                conpass.setCustomValidity('')
+            }
+            else {
+                conpass.setCustomValidity("Password does not match!.. ")
+            }
+        })
+    </script>
+
+</body>
+
+</html>
